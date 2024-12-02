@@ -1,0 +1,9 @@
+com/dummyjson_client/service/interfaces/IProductService.class
+com/dummyjson_client/service/ProductService.class
+com/dummyjson_client/utils/ProductListResponse.class
+com/dummyjson_client/utils/Constantes.class
+com/dummyjson_client/dto/Product.class
+com/dummyjson_client/DummyjsonClientApplication.class
+com/dummyjson_client/controller/ProductController.class
+com/dummyjson_client/config/RestTemplateConfig.class
+com/dummyjson_client/exceptions/DadosNaoEncontradosException.class
