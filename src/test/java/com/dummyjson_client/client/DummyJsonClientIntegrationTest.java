@@ -14,7 +14,6 @@ import com.dummyjson_client.dto.Product;
 import com.dummyjson_client.utils.ProductListResponse;
 
 @SpringBootTest
-@AutoConfigureMockMvc
 public class DummyJsonClientIntegrationTest {
 
 	@Autowired
