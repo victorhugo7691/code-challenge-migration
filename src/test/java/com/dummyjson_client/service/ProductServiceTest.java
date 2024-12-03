@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import com.dummyjson_client.client.IDummyjsonClient;
+import com.dummyjson_client.client.IDummyJsonClient;
 import com.dummyjson_client.dto.Product;
 import com.dummyjson_client.exceptions.DadosNaoEncontradosException;
 import com.dummyjson_client.utils.ProductListResponse;
@@ -24,15 +24,15 @@ import com.dummyjson_client.utils.TestFixture;
 public class ProductServiceTest {
 
 	@Mock
-	private IDummyjsonClient dummyjsonClient;
+	private IDummyJsonClient dummyJsonClient;
 
 	@InjectMocks
 	private ProductService productService;
 
 	@BeforeEach
 	void setUp() {
-		this.dummyjsonClient = mock(IDummyjsonClient.class);
-		this.productService = new ProductService(this.dummyjsonClient);
+		this.dummyJsonClient = mock(IDummyJsonClient.class);
+		this.productService = new ProductService(this.dummyJsonClient);
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public class ProductServiceTest {
 		listProducts.setProducts(products);
 
 		// Configura o resultado ao chamar a funcao
-		when(this.dummyjsonClient.getProducts()).thenReturn(listProducts);
+		when(this.dummyJsonClient.getProducts()).thenReturn(listProducts);
 
 		// Faz a chamada a funcao
 		List<Product> response = this.productService.getAllProducts();
@@ -55,7 +55,7 @@ public class ProductServiceTest {
 	@Test
 	void getAllProductsFailed() {
 		// Configura para o lancamento da exception
-		when(this.dummyjsonClient.getProducts())
+		when(this.dummyJsonClient.getProducts())
 				.thenThrow(new DadosNaoEncontradosException("Não foi possível identificar os produtos!"));
 
 		// Trata a exception
@@ -64,7 +64,7 @@ public class ProductServiceTest {
 		});
 
 		assertEquals("Não foi possível identificar os produtos!", exception.getMessage());
-		verify(this.dummyjsonClient, times(1)).getProducts();
+		verify(this.dummyJsonClient, times(1)).getProducts();
 	}
 
 	@Test
@@ -73,7 +73,7 @@ public class ProductServiceTest {
 		Long id = 1L;
 		Product product = TestFixture.createProduct(id);
 
-		when(this.dummyjsonClient.getProductById(id)).thenReturn(product);
+		when(this.dummyJsonClient.getProductById(id)).thenReturn(product);
 
 		// Faz a chamada a funcao
 		Product result = this.productService.getProductById(1L);

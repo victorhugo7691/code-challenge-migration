@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.dummyjson_client.dto.Product;
 
+// Esta classe foi desenvolvida para apoiar a serialização dos produtos consultados 
 public class ProductListResponse {
 
 	private List<Product> products;
