@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.dummyjson_client.client.DummyjsonClient;
+import com.dummyjson_client.client.IDummyjsonClient;
 import com.dummyjson_client.dto.Product;
 import com.dummyjson_client.exceptions.DadosNaoEncontradosException;
 import com.dummyjson_client.service.interfaces.IProductService;
@@ -14,9 +14,9 @@ import com.dummyjson_client.utils.ProductListResponse;
 @Service
 public class ProductService implements IProductService {
 
-	private DummyjsonClient dummyjsonClient;
+	private IDummyjsonClient dummyjsonClient;
 
-	public ProductService(DummyjsonClient dummyjsonClient) {
+	public ProductService(IDummyjsonClient dummyjsonClient) {
 		this.dummyjsonClient = dummyjsonClient;
 	}
 
@@ -32,7 +32,7 @@ public class ProductService implements IProductService {
 			}
 
 		} catch (DadosNaoEncontradosException exception) {
-			throw new DadosNaoEncontradosException("Não foi possível identificar os produtos! " + exception);
+			throw new DadosNaoEncontradosException("Não foi possível identificar os produtos!");
 		}
 
 		return products;

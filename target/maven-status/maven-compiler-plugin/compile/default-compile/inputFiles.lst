@@ -4,5 +4,6 @@
 /home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/DummyjsonClientApplication.java
 /home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/utils/ProductListResponse.java
 /home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/controller/ProductController.java
-/home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/client/DummyjsonClient.java
+/home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/client/IDummyjsonClient.java
+/home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/controller/HealthController.java
 /home/victor/projetos/IBM/code-challenge-migration/src/main/java/com/dummyjson_client/service/ProductService.java
