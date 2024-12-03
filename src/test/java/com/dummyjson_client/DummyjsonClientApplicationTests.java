@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DummyjsonClientApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+    void contextLoads() {
+        // Esse teste verifica se o contexto da aplicação é carregado sem problemas
+        DummyjsonClientApplication.main(new String[]{});
+    }
 
 }
